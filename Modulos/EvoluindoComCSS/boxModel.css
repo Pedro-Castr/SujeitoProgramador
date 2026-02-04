@@ -1,0 +1,42 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+}
+
+.container {
+    background-color: #121212;
+    width: 700px;
+    color: #fff;
+    /* Espaçamento externo */
+    margin: 50px auto;
+    /* Espaçamento interno */
+    padding: 12px;
+    border: 5px solid rebeccapurple;
+    border-radius: 12px;
+}
+
+.rede-social h2 {
+    text-align: center;
+}
+.rede-social ul {
+    padding: 0;
+    list-style: none;
+    text-align: center;
+}
+
+.rede-social li {
+    margin-bottom: 8px;
+}
+
+.rede-social a {
+    text-decoration: none;
+    color: purple;
+}
+
+.rede-social a:hover {
+    text-decoration: underline;
+    color: lightcoral;
+}
