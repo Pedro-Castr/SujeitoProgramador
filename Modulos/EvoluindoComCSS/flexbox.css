@@ -1,0 +1,38 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    outline: 0;
+}
+
+body {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.container {
+    background-color: darkslategray;
+    height: 500px;
+    margin: 50px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.area {
+    width: 100px;
+    height: 100px;
+    border-radius: 10px;
+    margin: 10px;
+}
+
+.item-1 {
+    background-color: lightseagreen;
+}
+
+.item-2 {
+    background-color: limegreen;
+}
+
+.item-3 {
+    background-color: greenyellow;
+}
