@@ -11,11 +11,16 @@ body {
 
 .container {
     background-color: darkslategray;
-    height: 500px;
+    height: 700px;
     margin: 50px;
     border-radius: 10px;
     display: flex;
     flex-direction: column;
+}
+
+.session {
+    display: flex;
+    flex-direction: row;
 }
 
 .area {
@@ -23,16 +28,77 @@ body {
     height: 100px;
     border-radius: 10px;
     margin: 10px;
+    text-align: center;
+    font-size: 25px;
+}
+
+.flex {
+    flex-basis: 400px;
+}
+
+.flex1 {
+    display: flex;
+    justify-content: center;
+}
+
+.flex2 {
+    display: flex;
+    height: 300px;
+    align-items: center;
+    justify-content:center ;
+    border: 1px solid black;
 }
 
 .item-1 {
     background-color: lightseagreen;
+    flex: 1;
 }
 
 .item-2 {
     background-color: limegreen;
+    flex: 1;
 }
 
 .item-3 {
     background-color: greenyellow;
+    flex: 2;
+}
+
+.item-4 {
+    background-color: lightcoral;
+    order: 2;
+}
+
+.item-5 {
+    background-color: lightgoldenrodyellow;
+    order: 3;
+}
+
+.item-6 {
+    background-color: lightsalmon;
+    order: 1;
+}
+
+.item-7 {
+    background-color: lightslategray;
+}
+
+.item-8 {
+    background-color: lightcyan;
+}
+
+.item-9 {
+    background-color: lightskyblue;
+}
+
+.item-10 {
+    background-color: rebeccapurple;
+}
+
+.item-11 {
+    background-color: violet;
+}
+
+.item-12 {
+    background-color: blueviolet;
 }
