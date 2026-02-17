@@ -1,0 +1,12 @@
+{
+  "name": "sujeitoprogramador",
+  "version": "1.0.0",
+  "description": "Repositório criado para acompanhar todos meus estudos sobre o curso do Sujeito Programador",
+  "main": "scripts.js",
+  "scripts": {
+    "commit": "node autocommit.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
