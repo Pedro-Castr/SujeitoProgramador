@@ -1,5 +1,9 @@
 const { execSync } = require("child_process");
 
+function git(cmd) {
+  return execSync(cmd, { encoding: "utf8" }).trim();
+}
+
 function formatarDataHora() {
   const agora = new Date();
 
@@ -13,21 +17,60 @@ function formatarDataHora() {
   return `${dia}/${mes}/${ano} ${hora}:${minuto}`;
 }
 
-try {
-  const status = execSync("git status --porcelain").toString();
+function verificarRepo() {
+  try {
+    git("git rev-parse --is-inside-work-tree");
+  } catch {
+    throw new Error("Este diretório não é um repositório Git.");
+  }
+}
 
-  if (!status) {
-    console.log("Nenhuma alteração para commit.");
+function obterArquivosAlterados() {
+  const status = git("git status --porcelain");
+
+  if (!status) return [];
+
+  return status
+    .split("\n")
+    .map(linha => linha.slice(3))
+    .filter(Boolean);
+}
+
+try {
+  verificarRepo();
+
+  const arquivos = obterArquivosAlterados();
+
+  if (arquivos.length === 0) {
+    console.log("✔ Nenhuma alteração para commit.\n");
     process.exit();
   }
 
   const dataHora = formatarDataHora();
+  const mensagem = `Estudos dia ${dataHora}`;
 
-  execSync("git add .", { stdio: "inherit" });
-  execSync(`git commit -m "Estudos dia ${dataHora}"`, { stdio: "inherit" });
-  execSync("git push origin HEAD", { stdio: "inherit" });
+  console.log("📄 Arquivos alterados:", arquivos.length);
+  console.log("📂 Lista de arquivos:");
 
-  console.log("Commit e push realizados com sucesso 🚀");
+  arquivos.forEach(arq => {
+    console.log(" -", arq);
+  });
+
+  console.log("\n📝 Mensagem do commit:");
+  console.log(mensagem);
+
+  console.log("\n📦 Adicionando arquivos...");
+  git("git add .");
+
+  console.log("📝 Criando commit...");
+  git(`git commit -m "${mensagem}"`);
+
+  console.log("🚀 Enviando para o repositório remoto...");
+  git("git push origin HEAD");
+
+  console.log("\n✅ Commit e push realizados com sucesso!\n");
+
 } catch (error) {
-  console.error("Erro ao executar script:", error.message);
+  console.error("\n❌ Erro ao executar script:");
+  console.error(error.message);
 }
