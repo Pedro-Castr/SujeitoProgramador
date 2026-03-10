@@ -5,12 +5,18 @@
 }
 
 a {
-  color: #3c96ed;
+  color: var(--button-primary);
   text-decoration: none;
 }
 
 body {
-  background-color: #fafafa;
+  --background: #fafafa;
+  --white: #ffffff;
+  --black: #000000;
+  --button-primary: #0095f6;
+  --border-primary: #e6e6e6;
+
+  background-color: var(--background);
   height: 100%;
   width: 100%;
   font-family: Arial, Helvetica, sans-serif;
@@ -49,8 +55,8 @@ body {
 }
 
 .login-panel {
-  background-color: #fff;
-  border: 1px solid #e6e6e6;
+  background-color: var(--white);
+  border: 1px solid var(--border-primary);
   text-align: center;
   padding: 20px 0;
 }
@@ -67,7 +73,7 @@ form {
 }
 
 input[type="password"], input[type="text"] {
-  background-color: #fff;
+  background-color: var(--white);
   border: 1px solid #eceaea;
   height: 40px;
   border-radius: 4px;
@@ -83,7 +89,7 @@ input[type="password"]::placeholder, input[type="text"]::placeholder {
 
 input[type="password"]:focus, input[type="text"]:focus {
   outline: 0;
-  border: 1px solid #a1a1a1;
+  border: 1px solid var(--border-primary);
 }
 
 input[type="submit"] {
@@ -91,8 +97,8 @@ input[type="submit"] {
   margin-top: 10px;
   height: 30px;
   border: 0;
-  background-color: #3c96ed;
-  color: #fff;
+  background-color: var(--button-primary);
+  color: var(--white);
   font-size: 16px;
   font-weight: bold;
   margin-bottom: 10px;
@@ -100,7 +106,7 @@ input[type="submit"] {
 }
 
 .info-box {
-  background-color: #fff;
+  background-color: var(--white);
   height: 60px;
   border: 1px solid #eceaea;
   margin: 10px auto 0;
@@ -135,7 +141,7 @@ footer {
 }
 
 footer a {
-  color: #000;
+  color: var(--black);
   text-transform: uppercase;
   font-weight: bold;
   margin-right: 8px;
@@ -174,11 +180,74 @@ footer a {
   width: 320px;
   margin: 10px 0;
   height: 35px;
-  background-color: #3c96ed;
-  color: #fff;
+  background-color: var(--button-primary);
+  color: var(--white);
   border: 0;
   border-radius: 4px;
   font-size: 15px;
   cursor: pointer;
   font-weight: bold;
+}
+
+.divisor-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 10px 0;
+}
+
+.line {
+  height: 1px;
+  background-color: var(--border-primary);
+  width: 35%;
+}
+
+.divisor-tag {
+  font-weight: bold;
+  margin: 0 2.5%;
+  color: #8e8e8e;
+  user-select: none;
+}
+
+@media (max-width: 850px) {
+  .left {
+    display: none;
+  }
+
+  #container {
+    width: 70%;
+  }
+
+  .right {
+    padding-left: 0;
+  }
+
+  footer a {
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 560px) {
+  #container {
+    width: 90%;
+  }
+
+  #container-signup {
+    width: 90%;
+  }
+
+  input[type="password"], input[type="text"], input[type="submit"] {
+    width: 85%;
+  }
+  .cta-button {
+    width: 85%;
+  }
+
+  .message {
+    margin: 10px 25px;
+  }
+
+    footer a {
+    font-size: 12px;
+  }
 }

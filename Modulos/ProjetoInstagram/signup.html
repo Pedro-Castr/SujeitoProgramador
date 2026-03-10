@@ -1,15 +1,16 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
+  <link rel="shortcut icon" href="assets/instagram-logo.png" type="image/x-icon">
   <title>Faça seu cadastro - Sujeitogram</title>
 </head>
 <body>
   <div id="wrapper">
     <div id="container-signup">
-      <div class="column right">
+      <div class="column">
         <div class="login-panel">
           <div class="logo">
             <img class="logo-img" src="assets/logo.png" alt="logo do sujeitogram">
@@ -23,11 +24,23 @@
             Entrar com Facebook
           </button>
 
+          <div class="divisor-container">
+            <div class="line"></div>
+            <div class="divisor-tag">ou</div>
+            <div class="line"></div>
+          </div>
+
           <form>
-            <input type="text" placeholder="Telefone, usuário ou email" name="username">
+            <input type="text" placeholder="Número de celular ou email" name="email">
+            <input type="text" placeholder="Nome completo" name="name">
+            <input type="text" placeholder="Username" name="username">
             <input type="password" placeholder="Senha" name="password">
-            <input type="submit" value="Entrar">
+            <input type="submit" value="Cadastrar">
           </form>
+        </div>
+
+        <div class="info-box">
+          <p>Tem uma conta? <a href="index.html">Conecte-se</a></p>
         </div>
 
         <div class="get-app-panel">
@@ -51,7 +64,7 @@
         <a href="#">Blog</a>
         <a href="#">Press</a>
         <a href="#">API</a>
-        <a href="#">Jobs</a>
+        <a href="feed.html">Feed</a>
         <a href="#">Privacy</a>
         <a href="#">Terms</a>
         <a href="#">Directory</a>
