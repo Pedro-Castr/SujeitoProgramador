@@ -1,0 +1,76 @@
+@import url('https://fonts.googleapis.com/css2?family=Boldonse&display=swap');
+
+:root {
+  --backgrond-color: #dff0f3;
+  --primary: #3a86ff;
+  --text-color: #03045e;
+  --outline: #adb5bd;
+  --white: #fff;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: var(--backgrond-color);
+}
+
+#app {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  flex-direction: column;
+  width: 100vw;
+  height: 90vh;
+}
+
+h1 {
+  font-family: "Boldonse", system-ui;
+  color: var(--text-color);
+  font-style: italic;
+}
+
+p.slogan {
+  font-size: 24px;
+}
+
+input[type="text"] {
+  width: 300px;
+  height: 24px;
+  border-radius: 12px;
+  border: 1px solid var(--outline);
+  padding: 5px;
+}
+
+button {
+  margin: 30px 0;
+  width: 150px;
+  height: 35px;
+  border-radius: 16px;
+  border: none;
+  background-color: var(--text-color);
+  color: var(--white);
+  font-size: 16px;
+  cursor: pointer;
+}
+
+ul {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 300px;
+}
+
+ul > li {
+  margin-bottom: 20px;
+  font-size: 18px;
+}
+
+footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: 10vh;
+  font-size: 20px;
+}
