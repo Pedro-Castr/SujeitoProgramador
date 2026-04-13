@@ -40,3 +40,39 @@ products.map((item) => {
 
 let filtro = products.filter(p => p.price >= 8);
 console.log(filtro);
+
+// Exercício 01
+const nums = [1, 2, 3];
+const copiaNum = [...nums, 4];
+console.log(copiaNum);
+
+// Exercício 02
+function somar(...array) {
+  return array.reduce((total, num) => {
+    return total + num;
+  }, 0);
+}
+
+console.log(somar(1, 2, 3, 4));
+
+// Exercício 03
+const dobrar = (numero) => {
+  console.log(numero * 2);
+}
+
+// Exercício 04
+const nomes = ["pedro", "ana", "carlos"];
+const nomesMaiusculo = nomes.map((nome) => nome.toUpperCase())
+console.log(nomesMaiusculo);
+
+// Exercício 05
+const produtos = [
+  { nome: "camisa", preco: 50 },
+  { nome: "calça", preco: 100 }
+];
+
+const produtosDescontados = produtos.map((produto) => ({
+  nome: produto.nome,
+  preco: produto.preco * 0.90
+}))
+console.log(produtosDescontados);
