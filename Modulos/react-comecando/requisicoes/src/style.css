@@ -57,7 +57,7 @@ header {
   font-size: 18px;
   font-weight: bold;
   cursor: pointer;
-  transition: all .3s;
+  transition: all 0.3s;
 }
 
 .botao:hover {

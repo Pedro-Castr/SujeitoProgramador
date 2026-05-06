@@ -11,7 +11,7 @@ produtos.splice(2, 1);
 console.log(`Lista atualizada após exclusão do mouse: ${produtos}`);
 
 // Buscar produtos
-const busca = produtos.find(item => item === "Computador");
+const busca = produtos.find((item) => item === "Computador");
 
 if (busca) {
   console.log("Item encontrado na lista");
@@ -37,10 +37,10 @@ console.log("Sem primeiro:", numeros);
 numeros.reverse();
 console.log("Invertido:", numeros);
 
-let hoje = '20/07/2019';
+let hoje = "20/07/2019";
 
 // Separar
-let [dia, mes, ano] = hoje.split('/');
+let [dia, mes, ano] = hoje.split("/");
 
 console.log("Dia:", dia);
 console.log("Mês:", mes);

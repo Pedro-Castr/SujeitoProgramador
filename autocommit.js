@@ -32,7 +32,7 @@ function obterArquivosAlterados() {
 
   return status
     .split("\n")
-    .map(linha => linha.slice(3))
+    .map((linha) => linha.slice(3))
     .filter(Boolean);
 }
 
@@ -52,7 +52,7 @@ try {
   console.log("📄 Arquivos alterados:", arquivos.length);
   console.log("📂 Lista de arquivos:");
 
-  arquivos.forEach(arq => {
+  arquivos.forEach((arq) => {
     console.log(" -", arq);
   });
 
@@ -69,7 +69,6 @@ try {
   git("git push origin HEAD");
 
   console.log("\n✅ Commit e push realizados com sucesso!\n");
-
 } catch (error) {
   console.error("\n❌ Erro ao executar script:");
   console.error(error.message);

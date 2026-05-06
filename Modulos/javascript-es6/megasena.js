@@ -9,8 +9,8 @@ function megasena(num) {
       if (!numeros.includes(sorteado)) {
         numeros.push(sorteado);
       }
-    } while (numeros.length < num)
-    
+    } while (numeros.length < num);
+
     console.log(`Os números sorteados foram: ${numeros}`);
   }
 }

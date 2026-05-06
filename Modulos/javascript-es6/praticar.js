@@ -7,7 +7,7 @@ function verificaNumero(num) {
   } else {
     return console.log("O número é positivo");
   }
-};
+}
 
 verificaNumero(8);
 
@@ -16,7 +16,7 @@ function verificaArray(array, num) {
   if (array.includes(num)) {
     console.log(`O número ${num} pertence ao array`);
   } else {
-    console.log(`O número ${num} não pertence ao array`)
+    console.log(`O número ${num} não pertence ao array`);
   }
 }
 
@@ -25,20 +25,20 @@ verificaArray(numeros, 7);
 
 // Encontrar o produto com Preço Igual a R$20 e filtrar Produtos com Preço Menor que R$8
 const products = [
-  { name: 'Maça', price: 2.5 },
-  { name: 'Coca cola', price: 8 },
-  { name: 'Guarana', price: 5 },
-  { name: 'Chocolate', price: 20 }
+  { name: "Maça", price: 2.5 },
+  { name: "Coca cola", price: 8 },
+  { name: "Guarana", price: 5 },
+  { name: "Chocolate", price: 20 },
 ];
 
 products.map((item) => {
   let { name, price } = item;
   if (price === 20) {
     console.log(`O produto ${name} custa R$20`);
-  };
+  }
 });
 
-let filtro = products.filter(p => p.price >= 8);
+let filtro = products.filter((p) => p.price >= 8);
 console.log(filtro);
 
 // Exercício 01
@@ -58,21 +58,21 @@ console.log(somar(1, 2, 3, 4));
 // Exercício 03
 const dobrar = (numero) => {
   console.log(numero * 2);
-}
+};
 
 // Exercício 04
 const nomes = ["pedro", "ana", "carlos"];
-const nomesMaiusculo = nomes.map((nome) => nome.toUpperCase())
+const nomesMaiusculo = nomes.map((nome) => nome.toUpperCase());
 console.log(nomesMaiusculo);
 
 // Exercício 05
 const produtos = [
   { nome: "camisa", preco: 50 },
-  { nome: "calça", preco: 100 }
+  { nome: "calça", preco: 100 },
 ];
 
 const produtosDescontados = produtos.map((produto) => ({
   nome: produto.nome,
-  preco: produto.preco * 0.90
-}))
+  preco: produto.preco * 0.9,
+}));
 console.log(produtosDescontados);

@@ -4,9 +4,14 @@
   "description": "Repositório criado para acompanhar todos meus estudos sobre o curso do Sujeito Programador",
   "main": "scripts.js",
   "scripts": {
-    "commit": "node autocommit.js"
+    "commit": "node autocommit.js",
+    "prettier:lint:check": "prettier --check .",
+    "prettier:lint:fix": "prettier --write ."
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "prettier": "^3.8.3"
+  }
 }

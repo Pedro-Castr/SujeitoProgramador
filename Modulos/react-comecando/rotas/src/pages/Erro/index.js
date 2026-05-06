@@ -1,10 +1,12 @@
 import { Link } from "react-router-dom";
 
 function Erro() {
-  return(
+  return (
     <div>
       <h2>Ops! Parece que essa página não existe...</h2>
-      <p>Retorne para a página <Link to="/">Home</Link></p>
+      <p>
+        Retorne para a página <Link to="/">Home</Link>
+      </p>
     </div>
   );
 }

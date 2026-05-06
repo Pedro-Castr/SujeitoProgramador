@@ -4,8 +4,8 @@ let pessoa = {
   nome: "Pedro",
   sobrenome: "Castro",
   empresa: "Workdone",
-  cargo: "CEO"
-}
+  cargo: "CEO",
+};
 
 console.log(pessoa);
 
@@ -22,7 +22,7 @@ console.log(cargo);
 let carros = ["Porsche", "McLaren", "Ferrari"];
 console.log(carros);
 
-let { 0:carro } = carros;
+let { 0: carro } = carros;
 console.log(carro);
 
 let cidades = ["Muriaé", "Juiz de Fora", "Rio de Janeiro"];

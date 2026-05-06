@@ -13,7 +13,7 @@ let total = numeros.reduce((acumulador, numero, indice, original) => {
   console.log(`O total do array é ${acumulador}`);
   console.log(`O número da vez é ${numero} e seu índice é ${indice}`);
 
-  return acumulador += numero;
+  return (acumulador += numero);
 });
 
 console.log(`Total do reduce: ${total}`);
@@ -27,11 +27,11 @@ let busca = listagem.find((item) => {
   }
 });
 
-// filter = 
+// filter =
 let palavras = ["Matheus", "Pedro", "Ana", "Luiza", "Larissa"];
 
 let resultado = palavras.filter((item) => {
-  return item.length <=4;
+  return item.length <= 4;
 });
 
 console.log(resultado);

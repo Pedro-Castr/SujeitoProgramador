@@ -5,8 +5,8 @@ let buttonElement = document.querySelector("#app button");
 let tarefas = JSON.parse(localStorage.getItem("@listaTarefas")) || [];
 
 function renderTarefas() {
-  listElement.innerHTML = '';
-  
+  listElement.innerHTML = "";
+
   tarefas.map((todo) => {
     let liElement = document.createElement("li");
     let tarefaText = document.createTextNode(todo);
@@ -20,23 +20,23 @@ function renderTarefas() {
     let posicao = tarefas.indexOf(todo);
 
     linkElement.setAttribute("onclick", `deletarTarefa(${posicao})`);
-    
+
     liElement.appendChild(tarefaText);
     liElement.appendChild(linkElement);
     listElement.appendChild(liElement);
-  })
+  });
 }
 
 renderTarefas();
 
 function adicionarTarefa() {
-  if (inputElement.value === '') {
+  if (inputElement.value === "") {
     alert("Digite alguma tarefa");
     return false;
   } else {
     let novaTarefa = inputElement.value;
     tarefas.push(novaTarefa);
-    inputElement.value = '';
+    inputElement.value = "";
 
     renderTarefas();
     salvarDados();

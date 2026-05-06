@@ -1,39 +1,46 @@
 import { useState, useEffect } from "react";
 
 function App() {
-  const [input, setInput] = useState('');
+  const [input, setInput] = useState("");
   const [tarefas, setTarefas] = useState([]);
 
   useEffect(() => {
-    const tarefasStorage = localStorage.getItem('@tarefas');
+    const tarefasStorage = localStorage.getItem("@tarefas");
 
     if (tarefasStorage) {
       setTarefas(JSON.parse(tarefasStorage));
     }
-  }, [])
+  }, []);
 
   useEffect(() => {
-    localStorage.setItem('@tarefas', JSON.stringify(tarefas));
+    localStorage.setItem("@tarefas", JSON.stringify(tarefas));
   }, [tarefas]);
 
   function handleRegister(e) {
     e.preventDefault();
     setTarefas([...tarefas, input]);
-    setInput('');
+    setInput("");
   }
-  return(
+  return (
     <div>
       <h1>Cadastrando Tarefas</h1>
       <form onSubmit={handleRegister}>
-        <label>Nome da tarefa: </label><br/>
-        <input placeholder="Digite uma tarefa" value={input} onChange={(e) => setInput(e.target.value)}></input><br/>
+        <label>Nome da tarefa: </label>
+        <br />
+        <input
+          placeholder="Digite uma tarefa"
+          value={input}
+          onChange={(e) => setInput(e.target.value)}
+        ></input>
+        <br />
 
         <button type="submit">Registrar</button>
       </form>
-      <br/><br/>
+      <br />
+      <br />
 
       <ul>
-        {tarefas.map( tarefa => (
+        {tarefas.map((tarefa) => (
           <li key={tarefa}>{tarefa}</li>
         ))}
       </ul>
@@ -41,5 +48,4 @@ function App() {
   );
 }
 
-export default App
-
+export default App;

@@ -79,7 +79,7 @@ html {
   border-radius: 20px;
   font-size: 18px;
   font-weight: bold;
-  transition: .3s;
+  transition: 0.3s;
 }
 
 .call-to-action:hover {
@@ -144,9 +144,9 @@ html {
 
 .projects img {
   width: 22%;
-  margin: 0 .5%;
-  opacity: .8;
-  transition: .3s;
+  margin: 0 0.5%;
+  opacity: 0.8;
+  transition: 0.3s;
 }
 
 .projects img:hover {
@@ -162,7 +162,7 @@ html {
   color: #f3f3f3;
   margin-top: 20px;
   cursor: pointer;
-  transition: .3s;
+  transition: 0.3s;
 }
 
 .action:hover {
