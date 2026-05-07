@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 import api from "../../services/api";
 import "./filme-info.css";
 
@@ -29,7 +30,30 @@ function Filme() {
     }
 
     loadFilme();
+
+    return () => {
+      console.log("componente desmontado");
+    };
   }, [navigate, id]);
+
+  function salvarFilme() {
+    const minhaLista = localStorage.getItem("@primeflix");
+
+    let filmesSalvos = JSON.parse(minhaLista) || [];
+
+    const hasfilme = filmesSalvos.some(
+      (filmeSalvo) => filmeSalvo.id === filme.id,
+    );
+
+    if (hasfilme) {
+      toast.warn("Esse filme já está na sua lista");
+      return;
+    }
+
+    filmesSalvos.push(filme);
+    localStorage.setItem("@primeflix", JSON.stringify(filmesSalvos));
+    toast.success("Filme salvo com sucesso!");
+  }
 
   if (loading) {
     return (
@@ -52,7 +76,7 @@ function Filme() {
       <strong>Avaliação: {filme.vote_average}/10</strong>
 
       <div className="area-buttons">
-        <button>Salvar</button>
+        <button onClick={salvarFilme}>Salvar</button>
         <button>
           <a
             target="_blank"
