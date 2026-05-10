@@ -1,21 +1,19 @@
 .filme-info {
   margin: 0 auto;
-  margin-top: 18px;
   display: flex;
+  height: calc(100vh - 120px);
   flex-direction: column;
   max-width: 800px;
-  padding: 0 8px;
 }
 
 .filme-info h1 {
-  margin: 14px 0;
+  margin: 14px auto;
 }
 
 .filme-info img {
   border-radius: 8px;
-  width: 800px;
+  width: 1200px;
   max-width: 100%;
-  max-height: 340px;
   object-fit: cover;
 }
 
@@ -23,34 +21,67 @@
   margin-top: 14px;
 }
 
+.filme-info hr {
+  margin: 10px 0;
+}
+
 .filme-info span {
   margin: 8px 0;
+  text-align: justify;
+  font-size: 1.2em;
+}
+
+.area-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.area-info div {
+  display: flex;
+  align-items: center;
+}
+
+.area-info p {
+  font-size: 18px;
+}
+
+.area-info .genero {
+  margin-left: 5px;
+  font-size: 15px;
+}
+
+.area-info .avaliacao {
+  padding: 4px;
+  border-radius: 6px;
+  color: #fff;
+}
+
+.area-buttons {
+  display: flex;
+  justify-content: center;
 }
 
 .area-buttons button {
-  margin-right: 12px;
-  margin-top: 14px;
-  margin-left: 0;
+  background-color: #001d3d;
+  color: #fff;
+  margin-right: 40px;
+  margin-top: 20px;
   font-size: 20px;
   border: 0;
   outline: none;
-  padding: 12px;
-  border-radius: 4px;
+  padding: 10px 24px;
+  border-radius: 12px;
   cursor: pointer;
   transition: all 0.3s;
 }
 
 .area-buttons button:hover {
-  background-color: #116feb;
-  color: #fff;
+  background-color: #003566;
 }
 
 .area-buttons a {
   text-decoration: none;
-  color: #000;
-  transition: all 0.3s;
-}
-
-.area-buttons a:hover {
   color: #fff;
+  transition: all 0.3s;
 }

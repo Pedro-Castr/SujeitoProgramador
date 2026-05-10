@@ -55,6 +55,22 @@ function Filme() {
     toast.success("Filme salvo com sucesso!");
   }
 
+  function getCorNota(nota) {
+    if (nota) {
+      if (nota >= 8.5) {
+        return "#00A8E1";
+      } else if (nota >= 7) {
+        return "#2E8B57";
+      } else if (nota >= 5.5) {
+        return "#6FCF97";
+      } else if (nota >= 4) {
+        return "#F2C94C";
+      } else {
+        return "#EB5757";
+      }
+    }
+  }
+
   if (loading) {
     return (
       <div className="filme-info">
@@ -73,7 +89,28 @@ function Filme() {
 
       <h3>Sinopse</h3>
       <span>{filme.overview}</span>
-      <strong>Avaliação: {filme.vote_average}/10</strong>
+      <hr />
+      <div className="area-info">
+        <strong>
+          Avaliação:{" "}
+          <span
+            className="avaliacao"
+            style={{ backgroundColor: getCorNota(filme.vote_average) }}
+          >
+            {filme.vote_average.toFixed(1)}/10
+          </span>
+        </strong>
+        <div>
+          <p>Gêneros:</p>
+          {filme.genres.map((genero) => {
+            return (
+              <span className="genero" key={genero.id}>
+                {genero.name}
+              </span>
+            );
+          })}
+        </div>
+      </div>
 
       <div className="area-buttons">
         <button onClick={salvarFilme}>Salvar</button>

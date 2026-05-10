@@ -35,14 +35,15 @@ function Home() {
       <div className="lista-filmes">
         {filmes.map((filme) => {
           return (
-            <article key={filme.id}>
-              <strong>{filme.title}</strong>
-              <img
-                src={`https://image.tmdb.org/t/p/original/${filme.poster_path}`}
-                alt={filmes.title}
-              />
-              <Link to={`/filme/${filme.id}`}>Acessar</Link>
-            </article>
+            <Link to={`/filme/${filme.id}`}>
+              <article key={filme.id}>
+                <strong>{filme.title}</strong>
+                <img
+                  src={`https://image.tmdb.org/t/p/original/${filme.poster_path}`}
+                  alt={filme.title}
+                />
+              </article>
+            </Link>
           );
         })}
       </div>
