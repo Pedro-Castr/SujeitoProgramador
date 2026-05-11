@@ -24,7 +24,7 @@ function Home() {
 
   if (loading) {
     return (
-      <div className="loading">
+      <div className="container loading">
         <h2>Carregando filmes...</h2>
       </div>
     );

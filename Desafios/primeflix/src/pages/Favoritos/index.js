@@ -32,7 +32,13 @@ function Favoritos() {
       <ul>
         {filmes.map((filme) => {
           return (
-            <li key={filme.id}>
+            <li
+              key={filme.id}
+              style={{
+                backgroundImage: `linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+                url(https://image.tmdb.org/t/p/w500${filme.backdrop_path})`,
+              }}
+            >
               <span>{filme.title}</span>
               <div>
                 <Link to={`/filme/${filme.id}`}>Ver detalhes</Link>

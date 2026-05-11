@@ -1,8 +1,32 @@
 .not-found {
   display: flex;
-  flex-direction: column;
   align-items: center;
-  margin-top: 20px;
-  width: 100%;
-  height: calc(100vh - 60px);
+  justify-content: center;
+  flex-direction: column;
+  height: calc(100vh - 120px);
+  text-align: center;
+}
+
+.not-found h1 {
+  font-size: 120px;
+  margin-bottom: 10px;
+}
+
+.not-found p {
+  font-size: 20px;
+  margin-bottom: 24px;
+}
+
+.not-found a {
+  display: inline-block;
+  text-decoration: none;
+  color: #fff;
+  background: #2563eb;
+  padding: 12px 24px;
+  border-radius: 10px;
+  transition: 0.2s;
+}
+
+.not-found a:hover {
+  background: #1d4ed8;
 }

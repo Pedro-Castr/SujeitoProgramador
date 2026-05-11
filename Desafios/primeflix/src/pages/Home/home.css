@@ -1,3 +1,7 @@
+.container {
+  min-height: calc(100vh - 120px);
+}
+
 .lista-filmes {
   display: flex;
   flex-wrap: wrap;
@@ -34,4 +38,10 @@
 
 .lista-filmes a {
   text-decoration: none;
+}
+
+.loading {
+  display: flex;
+  justify-content: center;
+  margin-top: 60px;
 }
