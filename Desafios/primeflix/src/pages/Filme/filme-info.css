@@ -4,6 +4,7 @@
   height: calc(100vh - 120px);
   flex-direction: column;
   max-width: 800px;
+  padding: 15px;
 }
 
 .filme-info h1 {
@@ -43,12 +44,12 @@
 }
 
 .area-info p {
-  font-size: 18px;
+  font-size: 16px;
 }
 
 .area-info .genero {
   margin-left: 5px;
-  font-size: 15px;
+  font-size: 16px;
 }
 
 .area-info .avaliacao {
@@ -84,4 +85,12 @@
   text-decoration: none;
   color: #fff;
   transition: all 0.3s;
+}
+
+@media (max-width: 758px) {
+  .area-info {
+    flex-direction: column;
+    justify-content: space-evenly;
+    min-height: 80px;
+  }
 }
