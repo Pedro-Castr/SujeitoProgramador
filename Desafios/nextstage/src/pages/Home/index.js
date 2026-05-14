@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
 import api from "../../services/api";
+import "./home.css";
+import Hero from "../../components/Hero";
 
 function Home() {
   const [games, setGames] = useState([]);
@@ -24,7 +26,18 @@ function Home() {
   }, []);
 
   console.log(games);
-  return <div></div>;
+  return (
+    <main className="home-container">
+      <p>
+        Descubra os jogos mais populares do momento, explore lançamentos
+        incríveis e encontre sua próxima aventura. Do indie ao AAA, acompanhe
+        avaliações, plataformas e detalhes dos títulos que estão dominando o
+        mundo gamer.
+      </p>
+
+      <Hero games={games} />
+    </main>
+  );
 }
 
 export default Home;
