@@ -1,7 +1,9 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import api from "../../services/api";
 import "./home.css";
 import Hero from "../../components/Hero";
+import Divider from "../../components/Divider";
 
 function Home() {
   const [games, setGames] = useState([]);
@@ -36,6 +38,20 @@ function Home() {
       </p>
 
       <Hero games={games} />
+      <Divider text={"Descubra nossos jogos mais bem avaliados!"} />
+
+      <section className="games">
+        {games.map((game) => {
+          return (
+            <div className="card" key={game.id}>
+              <img src={game.background_image} alt="" />
+              <h1>{game.name}</h1>
+              <h3>Nota: {game.rating}</h3>
+              <Link to={`/game/${game.id}`}>Detalhes</Link>
+            </div>
+          );
+        })}
+      </section>
     </main>
   );
 }
