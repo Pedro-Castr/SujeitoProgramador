@@ -1,0 +1,28 @@
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  height: 80px;
+  background-color: #1b1b1b;
+  color: #fff;
+}
+
+header h1 a {
+  text-decoration: none;
+  color: #fff;
+}
+
+header span {
+  color: #7c5cff;
+  font-style: italic;
+}
+
+header button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+header img {
+  width: 150%;
+}

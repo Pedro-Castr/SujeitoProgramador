@@ -1,0 +1,25 @@
+footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 80px;
+  background-color: #1b1b1b;
+  color: #fff;
+}
+
+footer h3 {
+  font-weight: normal;
+  font-size: 22px;
+  font-style: italic;
+  margin-bottom: 6px;
+}
+
+footer a {
+  text-decoration: none;
+  color: #7c5cff;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
