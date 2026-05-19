@@ -7,17 +7,22 @@ header {
   color: #fff;
 }
 
-span {
+header h1 a {
+  text-decoration: none;
+  color: #fff;
+}
+
+header span {
   color: #7c5cff;
   font-style: italic;
 }
 
-button {
+header button {
   background: none;
   border: none;
   cursor: pointer;
 }
 
-img {
+header img {
   width: 150%;
 }

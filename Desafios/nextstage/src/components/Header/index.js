@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import favoritoIcon from "../../assets/favorite-icon.svg";
 import apiIcon from "../../assets/api-icon.svg";
 import "./header.css";
@@ -9,7 +10,9 @@ function Header() {
         <img className="api" src={apiIcon} alt="API" />
       </a>
       <h1>
-        NEXT<span>STAGE</span>
+        <Link to="/">
+          NEXT<span>STAGE</span>
+        </Link>
       </h1>
       <button>
         <img className="favoritos" src={favoritoIcon} alt="favoritos" />
