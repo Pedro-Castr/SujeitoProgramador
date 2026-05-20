@@ -14,9 +14,9 @@ function Header() {
           NEXT<span>STAGE</span>
         </Link>
       </h1>
-      <button>
+      <Link to="/favoritos">
         <img className="favoritos" src={favoritoIcon} alt="favoritos" />
-      </button>
+      </Link>
     </header>
   );
 }
