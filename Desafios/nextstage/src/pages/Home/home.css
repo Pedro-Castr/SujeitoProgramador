@@ -84,27 +84,3 @@
   padding: 8px 16px;
   border-radius: 8px;
 }
-
-.btn-area {
-  display: flex;
-  justify-content: space-evenly;
-  width: 100%;
-  padding: 20px;
-}
-
-.btn-area a {
-  background-color: #7c5cff;
-  color: #fff;
-  min-width: 120px;
-  padding: 10px;
-  text-align: center;
-  text-decoration: none;
-  font-size: 18px;
-  border: none;
-  border-radius: 12px;
-  cursor: pointer;
-}
-
-.btn-area a:hover {
-  background-color: #6d50df;
-}
