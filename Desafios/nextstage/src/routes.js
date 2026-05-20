@@ -4,6 +4,7 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 import Game from "./pages/Game";
 import Error from "./pages/Error";
+import Favoritos from "./pages/Favoritos";
 
 function MainLayout() {
   return (
@@ -22,6 +23,7 @@ function RoutesApp() {
         <Route element={<MainLayout />}>
           <Route path="/" element={<Home />} />
           <Route path="/game/:id" element={<Game />} />
+          <Route path="/favoritos" element={<Favoritos />} />
         </Route>
 
         <Route path="*" element={<Error />} />

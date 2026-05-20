@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 import api from "../../services/api";
 import "./game.css";
 
@@ -29,6 +30,23 @@ function Game() {
 
     loadGame();
   }, [navigate, id]);
+
+  function handleFavorite() {
+    const myList = localStorage.getItem("@nextstage");
+
+    let savedGames = JSON.parse(myList) || [];
+
+    const hasGame = savedGames.some((savedGame) => savedGame.id === game.id);
+
+    if (hasGame) {
+      toast.warn("This game is already in your list");
+      return;
+    }
+
+    savedGames.push(game);
+    localStorage.setItem("@nextstage", JSON.stringify(savedGames));
+    toast.success("game saved!");
+  }
 
   console.log(game);
 
@@ -63,6 +81,9 @@ function Game() {
         <a href={game.metacritic_url} target="_blank" rel="noreferrer">
           Metacritic
         </a>
+        <button onClick={handleFavorite} className="favorite">
+          Add to favorites
+        </button>
       </div>
     </div>
   );
