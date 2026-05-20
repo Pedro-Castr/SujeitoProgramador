@@ -8,6 +8,7 @@ import Divider from "../../components/Divider";
 function Home() {
   const [games, setGames] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [page, setPage] = useState(1);
 
   useEffect(() => {
     async function loadGames() {
@@ -15,9 +16,8 @@ function Home() {
         const response = await api.get("/games", {
           params: {
             key: "2b081d046b334f76b1cf7b4b01845c4b",
-            page_size: 10,
-            ordering: "-metacritc",
-            languages: "pt",
+            page_size: 12,
+            page: page,
           },
         });
         setGames(response.data.results);
@@ -27,7 +27,14 @@ function Home() {
       }
     }
     loadGames();
-  }, []);
+  }, [page]);
+
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  }, [page]);
 
   function getCorNota(nota) {
     if (nota) {
@@ -74,13 +81,21 @@ function Home() {
               <img src={game.background_image} alt="" />
               <h1>{game.name}</h1>
               <h3 style={{ backgroundColor: getCorNota(game.rating) }}>
-                metacritc: {game.rating}
+                metacritic: {game.rating}
               </h3>
               <Link to={`/game/${game.id}`}>See more</Link>
             </div>
           );
         })}
       </section>
+
+      <div className="pagination">
+        <button disabled={page === 1} onClick={() => setPage(page - 1)}>
+          Previous
+        </button>
+        <span>{page}</span>
+        <button onClick={() => setPage(page + 1)}>Next</button>
+      </div>
     </main>
   );
 }
