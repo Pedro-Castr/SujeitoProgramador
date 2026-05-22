@@ -19,3 +19,13 @@
   font-size: 2rem;
   margin-bottom: 10px;
 }
+
+@media (max-width: 758px) {
+  .hero {
+    width: 90%;
+  }
+
+  .overlay h1 {
+    text-align: center;
+  }
+}

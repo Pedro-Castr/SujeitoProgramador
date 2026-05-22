@@ -8,3 +8,12 @@
   font-weight: normal;
   margin-bottom: 8px;
 }
+
+@media (max-width: 758px) {
+  .divider {
+    width: 90vw;
+  }
+  .divider h2 {
+    text-align: center;
+  }
+}
