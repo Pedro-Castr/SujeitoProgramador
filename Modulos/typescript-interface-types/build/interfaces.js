@@ -1,0 +1,19 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const BurguerK = {
+    nome: "BK",
+    endereco: "Rua X",
+    status: true,
+};
+console.log(BurguerK);
+function novaLoja({ nome, endereco, status }) {
+    console.log(`Loja ${nome} criada com sucesso!`);
+    console.log(`Endenreço da Loja: ${endereco}`);
+    console.log(`Status: ${status}`);
+}
+novaLoja({
+    nome: "Subway",
+    endereco: "Rua tal",
+    status: false,
+});
+//# sourceMappingURL=interfaces.js.map
