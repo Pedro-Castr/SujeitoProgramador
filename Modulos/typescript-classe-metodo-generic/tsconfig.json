@@ -32,6 +32,10 @@
     // "noFallthroughCasesInSwitch": true,
     // "noPropertyAccessFromIndexSignature": true,
 
+    // Legacy Decorators
+    "experimentalDecorators": true,
+    "useDefineForClassFields": false,
+
     // Recommended Options
     "strict": true,
     "jsx": "react-jsx",
