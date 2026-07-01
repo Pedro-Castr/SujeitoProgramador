@@ -2,7 +2,7 @@
 // Para isso funcionar é necessário algumas gambiarras como importar um arquivo applyMixin diretamente da documentação
 // https://www.typescriptlang.org/docs/handbook/mixins.html#how-does-a-mixin-work
 
-// import applyMixins from "./mixin/applyMixin";
+import { applyMixins } from "./mixin/applyMixin";
 
 class Automovel {
   ligar(): void {
@@ -31,7 +31,7 @@ class Carro {
 
 interface Carro extends Automovel, Especificacao {}
 
-// applyMixins(Carro, [Automovel, Especificacao]);
+applyMixins(Carro, [Automovel, Especificacao]);
 
 const gol = new Carro("Gol 1.6");
 
