@@ -1,25 +1,13 @@
+import { Header } from "./components/Header/header";
+import { Aluno } from "./components/Aluno/aluno";
+import { Footer } from "./components/Footer/footer";
+
 export default function App() {
   return (
     <div>
-      <h1>Meu Projeto</h1>
+      <Header titulo="Curso React + TypeScript" />
       <Aluno nome="Pedro Castro" idade={22} endereco="Rua dos Fodas" />
+      <Footer nome="Sujeito Programador" ano={2026} />
     </div>
-  );
-}
-
-interface AlunoProps {
-  nome: string;
-  idade: number;
-  endereco: string;
-}
-
-function Aluno({ nome, idade, endereco }: AlunoProps) {
-  return (
-    <>
-      <h2>Seja bem vindo, {nome}!</h2>
-      <p>
-        Você tem {idade} anos e mora em {endereco}
-      </p>
-    </>
   );
 }
