@@ -59,3 +59,9 @@ h1 {
 .btn-editar {
   background-color: #dfdf0d;
 }
+
+.msg-rodape {
+  text-align: center;
+  margin-top: 20px;
+  font-style: italic;
+}

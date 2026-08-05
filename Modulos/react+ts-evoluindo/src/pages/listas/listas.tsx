@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef, useEffect, useMemo, useCallback } from "react";
 import "./listas.css";
 
 export default function Lista() {
@@ -25,21 +25,6 @@ export default function Lista() {
     localStorage.setItem("@tarefasTS", JSON.stringify(tasks));
   }, [tasks]);
 
-  function addTask() {
-    if (!input) {
-      alert("Informe uma tarefa para cadastrar!");
-      return;
-    }
-
-    if (edit.enabled) {
-      saveEdit();
-      return;
-    }
-
-    setTasks((tarefas) => [...tarefas, input]);
-    setInput("");
-  }
-
   function deleteTask(item: string) {
     const newTask = tasks.filter((task) => task != item);
     setTasks(newTask);
@@ -55,20 +40,39 @@ export default function Lista() {
     });
   }
 
-  function saveEdit() {
+  const saveEdit = useCallback(() => {
     const findIndexTask = tasks.findIndex((task) => task === edit.task);
+
     const allTasks = [...tasks];
-
     allTasks[findIndexTask] = input;
-    setTasks(allTasks);
 
+    setTasks(allTasks);
     setEdit({
       enabled: false,
       task: "",
     });
 
     setInput("");
-  }
+  }, [tasks, edit, input]);
+
+  const totalTarefas = useMemo(() => {
+    return tasks.length;
+  }, [tasks]);
+
+  const addTask = useCallback(() => {
+    if (!input) {
+      alert("Informe uma tarefa para cadastrar!");
+      return;
+    }
+
+    if (edit.enabled) {
+      saveEdit();
+      return;
+    }
+
+    setTasks((tarefas) => [...tarefas, input]);
+    setInput("");
+  }, [edit.enabled, input, saveEdit]);
 
   return (
     <div>
@@ -103,6 +107,8 @@ export default function Lista() {
           </section>
         ))}
       </div>
+
+      <p className="msg-rodape">Você tem {totalTarefas} tarefas em andamento</p>
     </div>
   );
 }
