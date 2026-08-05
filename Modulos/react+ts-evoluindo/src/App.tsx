@@ -1,5 +1,6 @@
 import { Routes, Route, Link } from "react-router-dom";
 import CalculadoraCombustivel from "./pages/calculadoraCombustivel/calculadoraCombustivel";
+import RenderizacaoCondicional from "./pages/renderizacaoCondicional/renderizacaoCondicional";
 import Lista from "./pages/listas/listas";
 import "./App.css";
 
@@ -15,6 +16,9 @@ function Home() {
         <li>
           <Link to="/listas">Trabalhando com Listas</Link>
         </li>
+        <li>
+          <Link to="/renderizacaoCondicional">Renderização Condicional</Link>
+        </li>
       </ul>
     </div>
   );
@@ -29,6 +33,10 @@ export default function App() {
         element={<CalculadoraCombustivel />}
       />
       <Route path="/listas" element={<Lista />} />
+      <Route
+        path="/renderizacaoCondicional"
+        element={<RenderizacaoCondicional />}
+      />
     </Routes>
   );
 }
