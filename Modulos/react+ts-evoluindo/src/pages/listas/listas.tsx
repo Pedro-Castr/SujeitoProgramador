@@ -1,16 +1,29 @@
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import "./listas.css";
 
 export default function Lista() {
   const [input, setInput] = useState("");
+
   const [tasks, setTasks] = useState<string[]>(() => {
     const tarefasSalvas = localStorage.getItem("@tarefasTS");
     return tarefasSalvas ? JSON.parse(tarefasSalvas) : [];
   });
+
   const [edit, setEdit] = useState({
     enabled: false,
     task: "",
   });
+
+  const inputRef = useRef<HTMLInputElement>(null);
+  const firstRender = useRef(true);
+
+  useEffect(() => {
+    if (firstRender.current) {
+      firstRender.current = false;
+      return;
+    }
+    localStorage.setItem("@tarefasTS", JSON.stringify(tasks));
+  }, [tasks]);
 
   function addTask() {
     if (!input) {
@@ -25,18 +38,16 @@ export default function Lista() {
 
     setTasks((tarefas) => [...tarefas, input]);
     setInput("");
-
-    localStorage.setItem("@tarefasTS", JSON.stringify([...tasks, input]));
   }
 
   function deleteTask(item: string) {
     const newTask = tasks.filter((task) => task != item);
     setTasks(newTask);
-
-    localStorage.setItem("@tarefasTS", JSON.stringify(newTask));
   }
 
   function editTask(item: string) {
+    inputRef.current?.focus();
+
     setInput(item);
     setEdit({
       enabled: true,
@@ -57,8 +68,6 @@ export default function Lista() {
     });
 
     setInput("");
-
-    localStorage.setItem("@tarefasTS", JSON.stringify(allTasks));
   }
 
   return (
@@ -71,6 +80,7 @@ export default function Lista() {
           placeholder="Digite o nome da Tarefa..."
           value={input}
           onChange={(e) => setInput(e.target.value)}
+          ref={inputRef}
         />
         <button onClick={addTask}>
           {edit.enabled ? "Editar" : "Adicionar"}
