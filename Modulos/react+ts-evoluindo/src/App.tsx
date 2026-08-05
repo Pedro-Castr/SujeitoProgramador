@@ -1,5 +1,6 @@
 import { Routes, Route, Link } from "react-router-dom";
 import CalculadoraCombustivel from "./pages/calculadoraCombustivel/calculadoraCombustivel";
+import Lista from "./pages/listas/listas";
 import "./App.css";
 
 function Home() {
@@ -10,6 +11,9 @@ function Home() {
       <ul className="lista">
         <li>
           <Link to="/calculadoraCombustivel">Calculadora de Combustível</Link>
+        </li>
+        <li>
+          <Link to="/listas">Trabalhando com Listas</Link>
         </li>
       </ul>
     </div>
@@ -24,6 +28,7 @@ export default function App() {
         path="/calculadoraCombustivel"
         element={<CalculadoraCombustivel />}
       />
+      <Route path="/listas" element={<Lista />} />
     </Routes>
   );
 }
