@@ -3,7 +3,10 @@ import "./listas.css";
 
 export default function Lista() {
   const [input, setInput] = useState("");
-  const [tasks, setTasks] = useState<string[]>([]);
+  const [tasks, setTasks] = useState<string[]>(() => {
+    const tarefasSalvas = localStorage.getItem("@tarefasTS");
+    return tarefasSalvas ? JSON.parse(tarefasSalvas) : [];
+  });
   const [edit, setEdit] = useState({
     enabled: false,
     task: "",
@@ -22,11 +25,15 @@ export default function Lista() {
 
     setTasks((tarefas) => [...tarefas, input]);
     setInput("");
+
+    localStorage.setItem("@tarefasTS", JSON.stringify([...tasks, input]));
   }
 
   function deleteTask(item: string) {
     const newTask = tasks.filter((task) => task != item);
     setTasks(newTask);
+
+    localStorage.setItem("@tarefasTS", JSON.stringify(newTask));
   }
 
   function editTask(item: string) {
@@ -50,6 +57,8 @@ export default function Lista() {
     });
 
     setInput("");
+
+    localStorage.setItem("@tarefasTS", JSON.stringify(allTasks));
   }
 
   return (
