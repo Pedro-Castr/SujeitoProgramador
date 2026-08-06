@@ -1,21 +1,21 @@
-* {
-  margin: 0 auto;
+.home {
+  padding: 20px;
   font-family: sans-serif;
   box-sizing: border-box;
 }
 
-.titulo {
+.home .titulo {
   display: flex;
   justify-content: center;
   padding: 16px;
 }
 
-.lista a {
+.home .lista a {
   text-decoration: none;
   font-size: 1.2em;
   color: maroon;
 }
 
-.lista a:hover {
+.home .lista a:hover {
   text-decoration: underline;
 }
