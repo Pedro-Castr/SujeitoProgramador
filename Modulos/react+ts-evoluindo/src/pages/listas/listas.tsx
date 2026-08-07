@@ -75,8 +75,8 @@ export default function Lista() {
   }, [edit.enabled, input, saveEdit]);
 
   return (
-    <div>
-      <h1>Lista de Tarefas</h1>
+    <div className="tarefas">
+      <h1 className="titulo-tarefas">Lista de Tarefas</h1>
 
       <div className="addTask">
         <input

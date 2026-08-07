@@ -1,27 +1,30 @@
-body {
+.tarefas {
   display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
   background-color: #eeeeee;
 }
 
-h1 {
+.tarefas .titulo-tarefas {
   text-align: center;
   padding: 12px;
   font-size: 40px;
   font-style: italic;
 }
 
-.addTask {
+.tarefas .addTask {
   padding: 10px;
 }
 
-.addTask input {
+.tarefas .addTask input {
   padding: 12px;
   margin: 3px;
   border-radius: 12px;
   border: none;
 }
 
-.addTask button {
+.tarefas .addTask button {
   padding: 12px;
   margin: 3px;
   border-radius: 12px;
@@ -30,20 +33,20 @@ h1 {
   cursor: pointer;
 }
 
-.task {
+.tarefas .task {
   margin-top: 24px;
 }
 
-.task section {
+.tarefas .task section {
   font-size: 20px;
   margin-top: 3px;
 }
 
-.task span {
+.tarefas .task span {
   margin: 3px;
 }
 
-.btn {
+.tarefas .btn {
   font-size: 10px;
   padding: 3px;
   margin: 3px;
@@ -52,15 +55,15 @@ h1 {
   cursor: pointer;
 }
 
-.btn-excluir {
+.tarefas .btn-excluir {
   background-color: #cf3434;
 }
 
-.btn-editar {
+.tarefas .btn-editar {
   background-color: #dfdf0d;
 }
 
-.msg-rodape {
+.tarefas .msg-rodape {
   text-align: center;
   margin-top: 20px;
   font-style: italic;
