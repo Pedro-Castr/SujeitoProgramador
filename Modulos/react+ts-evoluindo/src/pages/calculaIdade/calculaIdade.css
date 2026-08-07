@@ -1,0 +1,52 @@
+.calcula-idade {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
+  width: 100%;
+  background-color: #352474;
+}
+
+.calcula-idade h2 {
+  font-size: 32px;
+  font-style: italic;
+  margin: 100px 0 30px 0;
+  color: #fff;
+}
+
+.calcula-idade section {
+  display: flex;
+  flex-direction: column;
+  width: 450px;
+  background-color: #f5f5f5;
+  padding: 20px;
+  border-radius: 12px;
+}
+
+.calcula-idade label {
+  padding: 4px 0;
+}
+
+.calcula-idade input {
+  padding: 4px;
+}
+
+.calcula-idade button {
+  padding: 12px 6px;
+  margin-top: 12px;
+  border-radius: 8px;
+  border: 1px solid #fff;
+  color: #fff;
+  background-color: #654ac7;
+  cursor: pointer;
+}
+
+.calcula-idade button:hover {
+  background-color: #553ea7;
+}
+
+.calcula-idade p {
+  margin-top: 30px;
+  color: #fff;
+  font-size: 22px;
+}

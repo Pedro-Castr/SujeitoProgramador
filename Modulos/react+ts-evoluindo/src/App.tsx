@@ -1,8 +1,11 @@
 import { Routes, Route, Link } from "react-router-dom";
-import CalculadoraCombustivel from "./pages/calculadoraCombustivel/calculadoraCombustivel";
+
 import RenderizacaoCondicional from "./pages/renderizacaoCondicional/renderizacaoCondicional";
+import CalculadoraCombustivel from "./pages/calculadoraCombustivel/calculadoraCombustivel";
+import CalculaIdade from "./pages/calculaIdade/calculaIdade";
 import DevFrases from "./pages/devFrases/devFrases";
 import Lista from "./pages/listas/listas";
+
 import "./App.css";
 import "./Global.css";
 
@@ -43,6 +46,7 @@ export default function App() {
         element={<RenderizacaoCondicional />}
       />
       <Route path="/devFrases" element={<DevFrases />} />
+      <Route path="/calculaIdade" element={<CalculaIdade />} />
     </Routes>
   );
 }
